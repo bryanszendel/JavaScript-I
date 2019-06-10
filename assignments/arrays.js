@@ -78,8 +78,15 @@ console.log(`Last Car is a ${lastCar.car_year} ${lastCar.car_make} ${lastCar.car
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 let carModels = [];
-carModels = carModels.push(inventory[car_model].values().sort())
-console.log(carModels);
+const iterator = inventory.values();
+for (let model of iterator) {
+    carModels.push(model.car_model);  
+};
+
+console.log('carModels alphabetical ===> ', carModels.sort());
+
+// carModels.push(iterator.next());
+// console.log('carModels ===>', carModels);
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
