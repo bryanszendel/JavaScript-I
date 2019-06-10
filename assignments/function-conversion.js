@@ -39,3 +39,8 @@ console.log(subtract(45,74));
 //   return num * 3;
 // });
 // console.log(triple);
+
+array = [1,2,3,4];
+let multiplier = (num) => num * 3;
+const triple = array.map(multiplier);
+console.log(triple);
