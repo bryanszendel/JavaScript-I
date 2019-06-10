@@ -76,8 +76,20 @@ console.log('Antonietta\'s Gender ===>', intern5.gender);
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
 
+intern2.speak = function() {
+  console.log(`Hello my name is ${intern2.name}!`);
+}
+
+intern2.speak();
+
 // Antonietta loves math, give her the ability to multiply two numbers together and return the product. Use the console.log provided as a hint.
 //console.log(antonietta.multiplyNums(3,4));
+
+intern5.multiplyNums = function(num1, num2) {
+  return (num1 * num2);
+}
+
+console.log('Antonietta\'s multiplier method ===> ', intern5.multiplyNums(2,18));
 
 // === Great work! === Head over to the the arrays.js file or take a look at the stretch challenge
 
