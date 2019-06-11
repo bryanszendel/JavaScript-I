@@ -11,34 +11,85 @@
 
 // Example format of an intern object: 1,examples@you.edu,Example,F
 const example = {
-  "id": 0,
+  "id": 1,
   "name": "Example",
   "email": "examples@you.edu",
   "gender": "F"
 }
 
 // Write your intern objects here:
+const intern1 = {
+  "id": 1,
+  "name": "Mitzi",
+  "email": "mmelloy0@psu.edu",
+  "gender": "F"
+}
+
+const intern2 = {
+  "id": 2,
+  "name": "Kennan",
+  "email": "kdiben1@tinypic.com",
+  "gender": "M"
+}
+
+const intern3 = {
+  "id": 3,
+  "name": "Keven",
+  "email": "kmummery2@wikimedia.org",
+  "gender": "M"
+}
+
+const intern4 = {
+  "id": 4,
+  "name": "Gannie",
+  "email": "gmartinson3@illinois.edu",
+  "gender": "M"
+}
+
+const intern5 = {
+  "id": 5,
+  "name": "Antonietta",
+  "email": "adaine5@samsung.com",
+  "gender": "F"
+}
 
 
 // ==== Challenge 2: Reading Object Data ==== 
 // Once your objects are created, log out the following requests from HR into the console:
 
 // Mitzi's name
+console.log('Mitzi\'s name ===> ', intern1.name);
 
 // Kennan's ID
+console.log('Kennan\'s ID ===>', intern2.id);
 
 // Keven's email
+console.log('Keven\'s email ===>', intern3.email);
 
 // Gannie's name
+console.log('Gannie\'s Name ===>', intern4.name);
 
 // Antonietta's Gender
+console.log('Antonietta\'s Gender ===>', intern5.gender);
 
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
 
+intern2.speak = function() {
+  console.log(`Hello my name is ${intern2.name}!`);
+}
+
+intern2.speak();
+
 // Antonietta loves math, give her the ability to multiply two numbers together and return the product. Use the console.log provided as a hint.
 //console.log(antonietta.multiplyNums(3,4));
+
+intern5.multiplyNums = function(num1, num2) {
+  return (num1 * num2);
+}
+
+console.log('Antonietta\'s multiplier method ===> ', intern5.multiplyNums(2,18));
 
 // === Great work! === Head over to the the arrays.js file or take a look at the stretch challenge
 
@@ -49,16 +100,43 @@ const example = {
 // 3. Nest a grandchild object in the child object with properties for name and age.  The name will be Sam and the age will be 30
 // 4. Give each of the objects the ability to speak their names using the this keyword.
 
-const parent = {}
+const parent = {
+  name: 'Susan',
+  age: 70,
+  speak: function() {
+    return 'Hello, my name is ' + this.name;
+  },
+  child: {
+    name: 'George',
+    speak: function() {
+      return 'Hello, my name is ' + this.name;
+    },
+    age: 50,
+    grandchild: {
+      name: 'Sam',
+      age: 30,
+      speak: function() {
+        return 'Hello, my name is ' + this.name;
+      }
+    }
+  }
+}
+
 
 // Log the parent object's name
+console.log('Parent Name ===>', parent.name);
 
 // Log the child's age
+console.log('Child Age ===>', parent.child.age);
 
 // Log the name and age of the grandchild
+console.log('Grandchild name/age ===>', parent.child.grandchild.name + ' ' + parent.child.grandchild.age);
 
 // Have the parent speak
+console.log('Parent Speak ===>', parent.speak());
 
 // Have the child speak
+console.log('Child Speak ===>', parent.child.speak());
 
 // Have the grandchild speak
+console.log('Grandchild Speak ===>', parent.child.grandchild.speak());
